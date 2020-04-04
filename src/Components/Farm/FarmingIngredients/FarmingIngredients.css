@@ -1,0 +1,203 @@
+.Sky {
+    height: 20%;
+    width: 80%;
+    background: linear-gradient(rgb(139, 170, 182), #218fcf);
+    /* border-radius: 0 0 30px 30px; */
+    /* box-shadow: inset -15px 0 #0f3680; */
+    /* margin: 2% auto; */
+}
+
+.Land {
+    height: 15%;
+    width: 80%;
+    background-color:#bc581e;
+    /* border-radius: 10% ; */
+    /* box-shadow: inset -15px 0 #c15711; */
+    /* margin: 2% auto; */
+    position: relative;
+}
+
+.Seeds1 {
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    background-color: rgb(139, 125, 43);
+    left: 30%;
+    top: 50%;
+    border-radius: 40%;
+    transform: rotate(-20deg);
+    /* box-shadow: inset -2px -3px #c9c9c9; */
+}
+
+.Seeds1:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(134, 118, 47);
+    left: -170%;
+    /* top: -260%; */
+    border-radius: 40%;
+    transform: rotate(60deg);
+    /* box-shadow: inset -1px 2px #c9c9c9; */
+  }
+  
+.Seeds1:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(160, 161, 60);
+    left: 180%;
+    top: -50%;
+    border-radius: 40%;
+    transform: rotate(60deg);
+    /* box-shadow: inset -1px -3px #c9c9c9; */
+  }
+
+  .Seeds2 {
+    width: 10%;
+    height: 15%;
+    position: absolute;
+    background-color: rgb(84, 114, 37);
+    left: 64%;
+    top: 50%;
+    border-radius: 40%;
+    transform: rotate(10deg);
+    /* box-shadow: inset -3px 0 #c9c9c9; */
+  }
+  
+  .Seeds2:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(122, 128, 44);
+    left: 150%;
+    top: -130%;
+    border-radius: 40%;
+    transform: rotate(90deg);
+    /* box-shadow: inset 1px 3px #c9c9c9; */
+  }
+  .Seeds2:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(122, 128, 44);
+    left:100%;
+    top: 10%;
+    border-radius: 40%;
+    transform: rotate(40deg);
+    /* box-shadow: inset 1px 3px #c9c9c9; */
+  }
+  
+
+.Meat {
+    width: 80%;
+    height: 8%;
+    background: linear-gradient(#7f3608, #702e05);
+    /* margin: 2% auto; */
+    border-radius: 15px;
+}
+
+.Cheese {
+    width: 90%;
+    height: 4.5%;
+    /* margin: 2% auto; */
+    background: linear-gradient(#f4d004, #d6bb22);
+    border-radius: 20px;
+}
+
+.Salad {
+    width: 85%;
+    height: 7%;
+    /* margin: 2% auto; */
+    background: linear-gradient(#228c1d, #91ce50);
+    border-radius: 20px;
+}
+
+.Bacon {
+    width: 80%;
+    height: 3%;
+    background: linear-gradient(#bf3813, #c45e38);
+    /* margin: 2% auto; */
+}
+
+
+.box{
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 6%;
+  background: none;
+}
+
+.container {
+  position: relative;
+  top:20%;
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  z-index: 5;
+}
+
+.stem {
+  /* top: 51%; */
+  left: 50%;
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(36deg, rgba(76,66,54,1) 0%, rgba(186,167,141,1) 100%);
+  position: absolute;
+  border-radius: 60% 60% 0 0;
+}
+
+.leaf-1 {
+  position: absolute;
+  left: 24%;
+  top: 30%;
+  background-image: linear-gradient(130deg, #63D471 30%, #233329 74%);
+  border-top-left-radius: 124px;
+  border-bottom-right-radius: 116px;
+  height: 20px;
+  transform: rotate(80deg);
+  width: 20px;
+}
+
+.leaf-2 {
+  position: absolute;
+  left: 55%;
+  top: 20%;
+  background-image: linear-gradient(340deg, #63D471 2%, #233329 78%);
+  border-top-left-radius: 124px;
+  border-bottom-right-radius: 116px;
+  height: 18px;
+  transform: rotate(192deg);
+  width:25px;
+}
+
+.leaf-3 {
+  position: absolute;
+  left: 25%;
+  top: 3%;
+  background-image: linear-gradient(113deg, #63D471 0%, #233329 64%);
+  border-top-left-radius: 134px;
+  border-bottom-right-radius: 126px;
+  height: 20px;
+  transform: rotate(79deg);
+  width: 20px;
+}
+
+.leaf-4 {
+ position: absolute;
+  left: 55.5%;
+  top: 1%;
+  background-image: linear-gradient(340deg, #63D471 2%, #233329 78%);
+  border-top-left-radius: 124px;
+  border-bottom-right-radius: 116px;
+  height: 10px;
+  transform: rotate(195deg);
+  width: 10px;
+}
+
+
