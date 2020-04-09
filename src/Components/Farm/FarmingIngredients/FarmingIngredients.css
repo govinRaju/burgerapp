@@ -1,25 +1,27 @@
 .Sky {
     height: 20%;
     width: 80%;
-    background: linear-gradient(rgb(139, 170, 182), #218fcf);
-    /* border-radius: 0 0 30px 30px; */
+    background: linear-gradient(rgb(139, 170, 182), #15506d00);
+    border-radius: 0 100%  0 0;
     /* box-shadow: inset -15px 0 #0f3680; */
     /* margin: 2% auto; */
 }
 
 .Land {
-    height: 15%;
+    height: 12%;
     width: 80%;
-    background-color:#bc581e;
-    /* border-radius: 10% ; */
+    background-color:#bc581ead;
+    border-radius: 0 0 100% 0;
     /* box-shadow: inset -15px 0 #c15711; */
     /* margin: 2% auto; */
     position: relative;
 }
 
+
+
 .Seeds1 {
     width: 5%;
-    height: 5%;
+    height: 10%;
     position: absolute;
     background-color: rgb(139, 125, 43);
     left: 30%;
@@ -44,7 +46,7 @@
   
 .Seeds1:before {
     content: "";
-    width: 100%;
+    width: 10%;
     height: 100%;
     position: absolute;
     background-color: rgb(160, 161, 60);
@@ -69,7 +71,7 @@
   
   .Seeds2:before {
     content: "";
-    width: 100%;
+    width: 10%;
     height: 100%;
     position: absolute;
     background-color: rgb(122, 128, 44);
@@ -81,7 +83,7 @@
   }
   .Seeds2:after {
     content: "";
-    width: 100%;
+    width: 10%;
     height: 100%;
     position: absolute;
     background-color: rgb(122, 128, 44);
@@ -93,43 +95,45 @@
   }
   
 
-.Meat {
+.Biofertilizer {
     width: 80%;
-    height: 8%;
+    height: 1%;
     background: linear-gradient(#7f3608, #702e05);
     /* margin: 2% auto; */
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
-.Cheese {
-    width: 90%;
-    height: 4.5%;
+.Water {
+    width: 80%;
+    height: 2%;
     /* margin: 2% auto; */
-    background: linear-gradient(#f4d004, #d6bb22);
-    border-radius: 20px;
+    background: linear-gradient(#746ece18, #1c50b975);
+    /* border-radius: 20px,; */
 }
 
-.Salad {
-    width: 85%;
-    height: 7%;
+.Grass {
+    width: 80%;
+    height: 0.5%;
     /* margin: 2% auto; */
     background: linear-gradient(#228c1d, #91ce50);
     border-radius: 20px;
 }
 
-.Bacon {
+.BioWaste {
     width: 80%;
-    height: 3%;
-    background: linear-gradient(#bf3813, #c45e38);
+    height: 1%;
+    background: linear-gradient(#4d261b, #c45e38);
     /* margin: 2% auto; */
 }
 
 
 .box{
+  background-image: url(../../../Assets/c.png);
+  
   position: relative;
   margin: auto;
   display: block;
-  margin-top: 6%;
+  /* margin-top: 6%; */
   background: none;
 }
 

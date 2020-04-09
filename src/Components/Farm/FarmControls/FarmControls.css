@@ -1,0 +1,55 @@
+.FarmControls{
+    width:100%;
+    display:flex;
+    flex-flow:column;
+    align-items:center;
+    box-shadow:0 2px 1px rgb(131, 117, 81);
+    margin:auto;
+    padding:10px 0;
+    
+}
+
+.Pr{
+    background-color: teal;
+}
+
+.OrderButton {
+    background-color: rgb(23, 67, 97);
+    outline:none;
+    cursor:pointer;
+    border:1px solid #966909;
+    color:#966909;
+    border-radius: 50%;
+    font-family: inherit;
+    padding:15px 30px;
+    box-shadow:2px 2px 2px #966909;
+}
+
+.OrderButton:hover, .OrderButton:active{
+    background-color: #A0DB41;
+    border: 1px solid #966909;
+    color:#966909;
+}
+
+.OrderButton:disabled{
+    background-color:#C7C6C6;
+    cursor: not-allowed;
+    border:1px solid #CCC;
+    color: #888888;
+}
+
+.OrderButton:not(:disabled){
+    animation:enable 0.3s linear;
+}
+
+@keyframes enable {
+    0%{
+        transform:scale(1);
+    }
+    60%{
+        transfrom:scale(1.1);
+    }
+    100%{
+        transform : scale(1);
+    }
+}

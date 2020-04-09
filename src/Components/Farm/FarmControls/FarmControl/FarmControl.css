@@ -1,0 +1,48 @@
+.FarmControl{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:5px 0;
+     background-color:rgba(117, 93, 40, 0.63);
+ width:70%;
+}
+
+.FarmControl button{
+    display:block;
+    font:inherit;
+    padding:5px;
+    margin:0 5px;
+    width:80px;
+    cursor:pointer;
+    outline:none;
+    border-radius: 50%;
+
+}
+
+.FarmControl button:disabled{
+ background-color:rgb(128, 87, 34);
+border:1px solid #7E7365;
+color:#ccc;
+cursor: default;
+}
+
+.Label {
+    padding:10px;
+    font-weight:bold;
+    width:80px;
+}
+
+.FarmControl .Less{
+    background-color:#a58d228e;
+    color:rgb(61, 10, 10);
+}
+
+.FarmControl .More{
+    background-color: rgba(50, 83, 19, 0.767);
+    color:rgb(2, 34, 42);
+}
+
+.FarmControl .Less:hover, .FarmControl .less:active{
+        background-color: #DAA972;
+    color:white;
+}

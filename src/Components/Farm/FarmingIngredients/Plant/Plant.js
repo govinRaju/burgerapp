@@ -1,15 +1,15 @@
 import React from 'react';
 
-const plant=()=>{
-   return( <div class="box">
-        <div class="container">
-            <div class="stem"></div>
-            <div class="leaf-1"></div>
-            <div class="leaf-2"></div>
-            <div class="leaf-3"></div>
-            <div class="leaf-4"></div>
+const plant = () => {
+    return (<div className="box">
+        <div className="container">
+            <div className="stem"></div>
+            <div className="leaf-1"></div>
+            <div className="leaf-2"></div>
+            <div className="leaf-3"></div>
+            <div className="leaf-4"></div>
         </div>
-        
+
     </div>)
 };
 
