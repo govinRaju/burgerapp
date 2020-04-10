@@ -77,8 +77,11 @@ class FarmBuilder extends Component {
         this.updatePurchaseState(updatedIngredients);
 
     }
-    PurchaseHandler=()=> {
+    PurchaseHandler = () => {
         this.setState({ purchasing: true });
+    }
+    PurchaseCancelHandler = () => {
+        this.setState({ purchasing: false });
     }
     render() {
         const disabledInfo = {
@@ -89,7 +92,7 @@ class FarmBuilder extends Component {
         }
         return (
             <Aux>
-                <Modal show={this.state.purchasing}>
+                <Modal show={this.state.purchasing} modalClosed={this.PurchaseCancelHandler}>
                     <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
                 </Modal>
                 <Farming ingredients={this.state.ingredients} />
