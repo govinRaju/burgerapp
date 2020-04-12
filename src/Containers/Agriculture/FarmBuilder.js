@@ -83,6 +83,9 @@ class FarmBuilder extends Component {
     PurchaseCancelHandler = () => {
         this.setState({ purchasing: false });
     }
+    purchaseContinueHandler = () => {
+        alert("purchase");
+    }
     render() {
         const disabledInfo = {
             ...this.state.ingredients
@@ -93,7 +96,11 @@ class FarmBuilder extends Component {
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.PurchaseCancelHandler}>
-                    <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
+                    <OrderSummary
+                        price={this.state.totalPrice}
+                        purchaseCancelled={this.PurchaseCancelHandler}
+                        purchaseContinued={this.purchaseContinueHandler}
+                        ingredients={this.state.ingredients}></OrderSummary>
                 </Modal>
                 <Farming ingredients={this.state.ingredients} />
                 <p>Farming looks mighty Easy when your Plow is a pencil and you are Thousand miles from the Field</p>
