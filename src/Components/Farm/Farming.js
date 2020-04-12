@@ -9,12 +9,12 @@ const farming = (props) => {
                     return <FarmingIngredient key={igKey + i} type={igKey} />
                 });
         })
-        .reduce((arr,el)=>{
+        .reduce((arr, el) => {
             return arr.concat(el)
-        },[]);
-        if(transformedIngredients.length===0){
-            transformedIngredients=<p>Cultivate</p>
-        }
+        }, []);
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Cultivate</p>
+    }
     console.log(transformedIngredients);
     return (
         <div className="Farming">

@@ -113,6 +113,8 @@ class FarmBuilder extends Component {
                     ordered={this.PurchaseHandler}
                     price={this.state.totalPrice}
                 />
+                <b >IF YOU EAT TODAY THANK A FARMER</b>
+
             </Aux>
         );
     }

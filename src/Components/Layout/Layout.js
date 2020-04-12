@@ -1,15 +1,15 @@
 import React from 'react';
 import Aux from '../../hoc/Auxilary.js';
 import classes from '../Layout/Layout.css';
+import Toolbar from '../Navigation/Toolbar/Toolbar.js';
 const layout = (props) => (
     <Aux>
-        <div>
-            toolbar,sidebar,backdrop
-<br />
-            <b>Life on a Farm Is School of Patience</b>
-        </div>
+        <Toolbar />
+
         <main className={classes.Content}>{props.children}</main>
-    </Aux>
+        <strong style={{ backgroundColor: "green" }}>Life on a Farm Is School of Patience</strong>
+
+    </Aux >
 
 );
 

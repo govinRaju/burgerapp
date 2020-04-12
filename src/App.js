@@ -8,7 +8,6 @@ class App extends Component {
     return (
       <div className="App">
         <Layout >
-          <b>IF YOU EAT TODAY THANK A FARMER</b>
           <FarmBuilder />
         </Layout>
       </div>
