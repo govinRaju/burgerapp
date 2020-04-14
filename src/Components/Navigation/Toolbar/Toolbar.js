@@ -2,9 +2,10 @@ import React from 'react';
 import './Toolbar.css';
 import Logo from '../../Logo/Logo.js';
 import NavigationItems from '../NavigationItems/NavigationItems.js';
+import MenuToggle from '../SideDrawer/MenuToggle/MenuToggle.js';
 const toolbar = (props) => (
     <header className="Toolbar">
-        <div>MENU </div>
+        <MenuToggle clicked={props.menuToggledClicked} />
         <Logo />
         {/* <Logo height="80%" /> */}
         <nav className="DesktopOnly"> <NavigationItems /></nav>
