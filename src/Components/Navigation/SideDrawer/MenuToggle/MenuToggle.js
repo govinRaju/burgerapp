@@ -1,7 +1,11 @@
 import React from 'react'
-
+import './MenuToggle.css';
 const menuToggle = (props) => (
-    <div style={{ cursor: "pointer" }} onClick={props.clicked} >Menu</div>
+    <div className="MenuToggle" onClick={props.clicked} >
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
 );
 
 export default menuToggle;

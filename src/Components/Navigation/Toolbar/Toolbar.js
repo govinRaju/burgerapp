@@ -6,8 +6,8 @@ import MenuToggle from '../SideDrawer/MenuToggle/MenuToggle.js';
 const toolbar = (props) => (
     <header className="Toolbar">
         <MenuToggle clicked={props.menuToggledClicked} />
-        <Logo />
-        {/* <Logo height="80%" /> */}
+        {/* <div>Menu</div>        <Logo /> */}
+        <Logo height="80%" />
         <nav className="DesktopOnly"> <NavigationItems /></nav>
     </header>
 );
