@@ -5,6 +5,7 @@ import FarmControls from '../../Components/Farm/FarmControls/FarmControls';
 // import { render } from '@testing-library/react';
 import Modal from '../../Components/UI/Modal/Modal.js';
 import OrderSummary from '../../Components/Farm/OrderSummary/OrderSummary.js';
+import axios from '../../axios-orders';
 const INGREDIENTS_PRICES = {
     grass: 10,
     biofertilizer: 50,
@@ -85,6 +86,23 @@ class FarmBuilder extends Component {
     }
     purchaseContinueHandler = () => {
         alert("purchase");
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.totalPrice,
+            customer: {
+                name: "Indian Farmer",
+                address: {
+                    street: 'organicstreet1',
+                    ZipCode: '533431',
+                    country: 'India'
+                },
+                email: 'indianfarmer@farming.com'
+            },
+            deliveryMethod: 'fast'
+        }
+        axios.post('/orders.json', order)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
     }
     render() {
         const disabledInfo = {
