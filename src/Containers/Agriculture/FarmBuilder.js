@@ -6,6 +6,9 @@ import FarmControls from '../../Components/Farm/FarmControls/FarmControls';
 import Modal from '../../Components/UI/Modal/Modal.js';
 import OrderSummary from '../../Components/Farm/OrderSummary/OrderSummary.js';
 import axios from '../../axios-orders';
+import Spinner from '../../Components/UI/Spinner/Spinner.js';
+
+
 const INGREDIENTS_PRICES = {
     grass: 10,
     biofertilizer: 50,
@@ -29,7 +32,8 @@ class FarmBuilder extends Component {
         },
         totalPrice: 1000,
         purchaseable: false,
-        purchasing: false
+        purchasing: false,
+        loading: false
     }
 
     updatePurchaseState(ingredients) {
@@ -85,7 +89,8 @@ class FarmBuilder extends Component {
         this.setState({ purchasing: false });
     }
     purchaseContinueHandler = () => {
-        alert("purchase");
+        // alert("purchase");
+        this.setState({ loading: true });
         const order = {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice,
@@ -101,8 +106,12 @@ class FarmBuilder extends Component {
             deliveryMethod: 'fast'
         }
         axios.post('/orders.json', order)
-            .then(response => console.log(response))
-            .catch(error => console.log(error));
+            .then(response => {
+                this.setState({ loading: false, purchasing: false })
+            })
+            .catch(error => {
+                this.setState({ loading: false, purchasing: false })
+            });
     }
     render() {
         const disabledInfo = {
@@ -111,14 +120,19 @@ class FarmBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
+        let orderSummary = <OrderSummary
+            price={this.state.totalPrice}
+            purchaseCancelled={this.PurchaseCancelHandler}
+            purchaseContinued={this.purchaseContinueHandler}
+            ingredients={this.state.ingredients}></OrderSummary>;
+
+        if (this.state.loading) {
+            orderSummary = <Spinner />
+        }
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.PurchaseCancelHandler}>
-                    <OrderSummary
-                        price={this.state.totalPrice}
-                        purchaseCancelled={this.PurchaseCancelHandler}
-                        purchaseContinued={this.purchaseContinueHandler}
-                        ingredients={this.state.ingredients}></OrderSummary>
+                    {orderSummary}
                 </Modal>
                 <Farming ingredients={this.state.ingredients} />
                 <p>Farming looks mighty Easy when your Plow is a pencil and you are Thousand miles from the Field</p>
