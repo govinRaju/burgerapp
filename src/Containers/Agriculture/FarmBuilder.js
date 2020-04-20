@@ -24,17 +24,21 @@ class FarmBuilder extends Component {
     //     })
     // }
     state = {
-        ingredients: {
-            water: 0,
-            grass: 0,
-            biowaste: 0,
-            biofertilizer: 0
-
-        },
+        ingredients: null,
         totalPrice: 1000,
         purchaseable: false,
         purchasing: false,
-        loading: false
+        loading: false,
+        error: false
+    }
+    componentDidMount() {
+        axios.get('./ingredients.json')
+            .then(response => {
+                this.setState({ ingredients: response.data })
+            })
+            .catch(error => {
+                this.setState({ error: true })
+            })
     }
 
     updatePurchaseState(ingredients) {
@@ -121,31 +125,40 @@ class FarmBuilder extends Component {
         for (let key in disabledInfo) {
             disabledInfo[key] = disabledInfo[key] <= 0
         }
-        let orderSummary = <OrderSummary
-            price={this.state.totalPrice}
-            purchaseCancelled={this.PurchaseCancelHandler}
-            purchaseContinued={this.purchaseContinueHandler}
-            ingredients={this.state.ingredients}></OrderSummary>;
+        let orderSummary = null;
 
-        if (this.state.loading) {
-            orderSummary = <Spinner />
+        let farming = this.state.error ? <p>ingredients can't be loaded </p> : <Spinner />;
+        if (this.state.ingredients) {
+            farming = (
+                <Aux>
+                    <Farming ingredients={this.state.ingredients} />
+                    <FarmControls
+                        ingredientAdded={this.addIngredientHandler}
+                        ingredientRemoved={this.removeIngredientHandler}
+                        disabled={disabledInfo}
+                        purchaseable={this.state.purchaseable}
+                        ordered={this.PurchaseHandler}
+                        price={this.state.totalPrice}
+                    />
+                </Aux>
+            );
+            orderSummary = <OrderSummary
+                price={this.state.totalPrice}
+                purchaseCancelled={this.PurchaseCancelHandler}
+                purchaseContinued={this.purchaseContinueHandler}
+                ingredients={this.state.ingredients}></OrderSummary>;
+
+            if (this.state.loading) {
+                orderSummary = <Spinner />
+            }
         }
         return (
             <Aux>
                 <Modal show={this.state.purchasing} modalClosed={this.PurchaseCancelHandler}>
                     {orderSummary}
                 </Modal>
-                <Farming ingredients={this.state.ingredients} />
-                <p>Farming looks mighty Easy when your Plow is a pencil and you are Thousand miles from the Field</p>
-
-                <FarmControls
-                    ingredientAdded={this.addIngredientHandler}
-                    ingredientRemoved={this.removeIngredientHandler}
-                    disabled={disabledInfo}
-                    purchaseable={this.state.purchaseable}
-                    ordered={this.PurchaseHandler}
-                    price={this.state.totalPrice}
-                />
+                <p style={{ paddingTop: "50px" }}>Farming looks mighty Easy when your Plow is a pencil and you are Thousand miles from the Field</p>
+                {farming}
                 <b >IF YOU EAT TODAY THANK A FARMER</b>
 
             </Aux>
