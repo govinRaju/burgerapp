@@ -7,6 +7,7 @@ import Modal from '../../Components/UI/Modal/Modal.js';
 import OrderSummary from '../../Components/Farm/OrderSummary/OrderSummary.js';
 import axios from '../../axios-orders';
 import Spinner from '../../Components/UI/Spinner/Spinner.js';
+import withErrorHandler from '../../hoc/withErrorHanlder/withErrorHandler.js';
 
 
 const INGREDIENTS_PRICES = {
@@ -152,4 +153,4 @@ class FarmBuilder extends Component {
     }
 }
 
-export default FarmBuilder;
+export default withErrorHandler(FarmBuilder, axios);

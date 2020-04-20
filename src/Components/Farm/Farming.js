@@ -15,7 +15,7 @@ const farming = (props) => {
     if (transformedIngredients.length === 0) {
         transformedIngredients = <p>Cultivate</p>
     }
-    console.log(transformedIngredients);
+    // console.log(transformedIngredients);
     return (
         <div className="Farming">
             <FarmingIngredient type="sky" />
