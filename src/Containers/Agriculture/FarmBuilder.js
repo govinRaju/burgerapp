@@ -93,30 +93,31 @@ class FarmBuilder extends Component {
     PurchaseCancelHandler = () => {
         this.setState({ purchasing: false });
     }
-    apurchaseContinueHandler = () => {
+    purchaseContinueHandler = () => {
         // alert("purchase");
-        this.setState({ loading: true });
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: "Indian Farmer",
-                address: {
-                    street: 'organicstreet1',
-                    ZipCode: '533431',
-                    country: 'India'
-                },
-                email: 'indianfarmer@farming.com'
-            },
-            deliveryMethod: 'fast'
-        }
-        axios.post('/orders.json', order)
-            .then(response => {
-                this.setState({ loading: false, purchasing: false })
-            })
-            .catch(error => {
-                this.setState({ loading: false, purchasing: false })
-            });
+        // this.setState({ loading: true });
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: "Indian Farmer",
+        //         address: {
+        //             street: 'organicstreet1',
+        //             ZipCode: '533431',
+        //             country: 'India'
+        //         },
+        //         email: 'indianfarmer@farming.com'
+        //     },
+        //     deliveryMethod: 'fast'
+        // }
+        // axios.post('/orders.json', order)
+        //     .then(response => {
+        //         this.setState({ loading: false, purchasing: false })
+        //     })
+        //     .catch(error => {
+        //         this.setState({ loading: false, purchasing: false })
+        //     });
+        this.props.history.push('/checkout');
     }
     render() {
         const disabledInfo = {

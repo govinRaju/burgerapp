@@ -21,9 +21,9 @@ class App extends Component {
         <Layout >
           {/* {this.state.show ? <FarmBuilder /> : null} */}
           {/* <FarmBuilder /> */}
+          {/* <Checkout /> */}
           <Route path="/" exact component={FarmBuilder} />
           <Route path="/checkout" component={Checkout} />
-          <Checkout />
         </Layout>
       </div>
     );
