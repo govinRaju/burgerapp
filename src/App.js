@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route } from 'react-router-dom';
 // import { render } from '@testing-library/react';
 import Layout from '../src/Components/Layout/Layout.js';
 import FarmBuilder from '../src/Containers/Agriculture/FarmBuilder';
+import Checkout from './Containers/Checkout/Checkout';
+
 class App extends Component {
   // state = {
   //   show: true
@@ -17,7 +20,10 @@ class App extends Component {
       <div className="App">
         <Layout >
           {/* {this.state.show ? <FarmBuilder /> : null} */}
-          <FarmBuilder />
+          {/* <FarmBuilder /> */}
+          <Route path="/" exact component={FarmBuilder} />
+          <Route path="/checkout" component={Checkout} />
+          <Checkout />
         </Layout>
       </div>
     );

@@ -93,7 +93,7 @@ class FarmBuilder extends Component {
     PurchaseCancelHandler = () => {
         this.setState({ purchasing: false });
     }
-    purchaseContinueHandler = () => {
+    apurchaseContinueHandler = () => {
         // alert("purchase");
         this.setState({ loading: true });
         const order = {
