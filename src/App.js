@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 import Layout from '../src/Components/Layout/Layout.js';
 import FarmBuilder from '../src/Containers/Agriculture/FarmBuilder';
 import Checkout from './Containers/Checkout/Checkout';
+import Orders from './Containers/Orders/Orders';
 
 class App extends Component {
   // state = {
@@ -23,6 +24,7 @@ class App extends Component {
           {/* <FarmBuilder /> */}
           {/* <Checkout /> */}
           <Route path="/" exact component={FarmBuilder} />
+          <Route path="/orders" component={Orders} />
           <Route path="/checkout" component={Checkout} />
         </Layout>
       </div>
