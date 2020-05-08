@@ -57,7 +57,7 @@ class ContactData extends Component {
             <div className="ContactData">
                 <h4>Enter your contact Data</h4>
                 {form}
-                <Button btnType="Success" clicked={this.orderHandler}>Estimate</Button>
+                <Button btnType="Success" clicked={this.orderHandler}>Order</Button>
             </div>
         )
     }
