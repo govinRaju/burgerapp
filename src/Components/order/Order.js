@@ -3,7 +3,7 @@ import './Order.css';
 const order = (props) => (
     <div className="Order">
         <p>Ingredients</p>
-        <p>Price : <strong>USD </strong></p>
+        <p>Price : <strong>$ </strong></p>
     </div>
 );
 
