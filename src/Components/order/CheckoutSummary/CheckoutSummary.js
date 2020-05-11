@@ -11,10 +11,10 @@ const checkoutSummary = (props) => {
                 <Farming ingredients={props.ingredients} />
             </div>
             <Button
-                clicked={props.checkoutCancelled}
-                btnType="Danger" >Cancel</Button>
-            <Button clicked={props.checkoutContinued}
-                btnType="Success" style={{ color: '#5C9210' }}>Continue</Button>
+                btnType="Danger" clicked={props.checkoutCancelled}
+            >Cancel</Button>
+            <Button btnType="Success" clicked={props.checkoutContinued}
+            >Continue</Button>
         </div>
     )
 }
