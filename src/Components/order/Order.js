@@ -6,18 +6,25 @@ const order = (props) => {
     for (let ingredientName in props.ingredients) {
         ingredients.push(
             {
-                name: props.ingredientName,
+                name: ingredientName,
                 amount: props.ingredients[ingredientName]
             }
         );
     };
     const ingredientOutput = ingredients.map(ig => {
         return <span
+            // style={{
+            //     textTransform: 'capitalize',
+            //     display: 'inline-block',
+            //     margin: '0px,10px',
+            //     border: '1px solid',
+            //     padding: '5px'
+            // }}
             style={{
                 textTransform: 'capitalize',
                 display: 'inline-block',
-                margin: '0px,10px',
-                border: '1px solid',
+                margin: '10px 8px',
+                border: '1px solid #ccc',
                 padding: '5px'
             }}
             key={ig.name}>
