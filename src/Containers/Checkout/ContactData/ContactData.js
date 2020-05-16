@@ -6,12 +6,59 @@ import Spinner from '../../../Components/UI/Spinner/Spinner';
 import Input from '../../../Components/UI/Input/Input';
 class ContactData extends Component {
     state = {
-        name: '',
-        email: '',
-        address: {
-            street: '',
-            postalCode: ''
-        },
+        orderForm: {
+            name: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: "Your Name"
+                },
+                value: ""
+            },
+
+            street: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: "Street Name"
+                },
+                value: ""
+            },
+            ZipCode: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: "Zipcode"
+                },
+                value: ""
+            },
+            country: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'text',
+                    placeholder: "Country"
+                },
+                value: ""
+            },
+            email: {
+                elementType: 'input',
+                elementConfig: {
+                    type: 'email',
+                    placeholder: "Your Email"
+                },
+                value: ""
+            },
+            deliveryMethod: {
+                elementType: 'select',
+                elementConfig: {
+                    options: [
+                        { value: 'fast', displayValue: 'fast' },
+                        { value: 'regular', displayValue: 'regular' }
+                    ]
+                }
+            }
+        }
+        ,
         loading: false
     }
     orderHandler = (event) => {
@@ -22,16 +69,7 @@ class ContactData extends Component {
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
-            customer: {
-                name: "Indian Farmer",
-                address: {
-                    street: 'organicstreet1',
-                    ZipCode: '533431',
-                    country: 'India'
-                },
-                email: 'indianfarmer@farming.com'
-            },
-            deliveryMethod: 'fast'
+
         }
         axios.post('/orders.json', order)
             .then(response => {
@@ -43,12 +81,24 @@ class ContactData extends Component {
             });
     }
     render() {
+        const formElementsArray = [];
+        for (let key in this.state.orderForm) {
+            formElementsArray.push({
+                id: key,
+                config: this.state.orderForm[key]
+            });
+        }
         let form = (
             <form>
-                <Input inputtype="input" type="text" name="name" placeholder="Your name" />
-                <Input inputtype="input" type="text" name="email" placeholder="Your email" />
-                <Input inputtype="input" type="text" name="street" placeholder="Street" />
-                <Input inputtype="input" type="text" name="postalCode" placeholder="ZipCode" />
+                {formElementsArray.map(formElement => (
+                    <Input
+                        key={formElement.id}
+                        elementType={formElement.config.elementType}
+                        elementConfig={formElement.config.elementConfig}
+                        value={formElement.config.value}
+                    />
+                ))}
+                <Button btnType="Success" clicked={this.orderHandler}>Order</Button>
             </form>
         );
         if (this.state.loading) {
@@ -58,7 +108,6 @@ class ContactData extends Component {
             <div className="ContactData">
                 <h4>Enter your contact Data</h4>
                 {form}
-                <Button btnType="Success" clicked={this.orderHandler}>Order</Button>
             </div>
         )
     }
