@@ -84,6 +84,7 @@ class ContactData extends Component {
                     ]
                 },
                 value: '',
+                validation: {},
                 valid: true
             }
         },
@@ -116,6 +117,11 @@ class ContactData extends Component {
 
     checkValidity(value, rules) {
         let isValid = true;
+        if (!rules) {
+            // this is for the validation that we set to wmpty and make the rule to true coz the need for validation is not necessary in this
+            //can be done by just putting the validation to null as {} or by adding this condition
+            return true;
+        }
         if (rules.required) {
             isValid = value.trim() !== '' && isValid;
         }
