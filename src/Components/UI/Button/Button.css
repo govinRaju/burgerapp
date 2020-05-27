@@ -1,7 +1,7 @@
 .Button {
     background-color: transparent;
     border: none;
-    /* color: white; */
+    color: rgb(18, 91, 104);
     outline: none;
     cursor: pointer;
     font: inherit;
@@ -17,8 +17,31 @@
 
  .Success {
     color: #5C9210;
+    background-color: transparent;
+    border: none;
+    /* color: white; */
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.Success:disabled{
+    color: grey;
+    cursor: not-allowed;
 }
 
 .Danger {
-    color: #944317;
+    color: #9e3c08;
+    background-color: transparent;
+    border: none;
+    /* color: white; */
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
 } 
