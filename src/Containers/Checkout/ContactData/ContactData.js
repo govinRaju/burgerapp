@@ -79,8 +79,8 @@ class ContactData extends Component {
                 elementType: 'select',
                 elementConfig: {
                     options: [
-                        { value: 'fast', displayValue: 'fast' },
-                        { value: 'regular', displayValue: 'regular' }
+                        { value: 'Fast', displayValue: 'Fast' },
+                        { value: 'Regular', displayValue: 'Regular' }
                     ]
                 },
                 value: '',
